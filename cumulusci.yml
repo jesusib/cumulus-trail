@@ -1,0 +1,26 @@
+minimum_cumulusci_version: '3.32.1'
+project:
+    name: cumulus-trail
+    package:
+        name: Food-Bank
+        api_version: '50.0'
+    git:
+    test:
+        name_match: '[%Test%]'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/cumulus-trail/tests
+            options:
+                outputdir: robot/cumulus-trail/results
+
+    robot_testdoc:
+        options:
+            path: robot/cumulus-trail/tests
+            output: robot/cumulus-trail/doc/cumulus-trail_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
